@@ -1,3 +1,4 @@
+
 There are eight possible loglevel strings, defined in the header <linux/kern_levels.h> :
 
 #define KERN_SOH "\001"  /* ASCII Start Of Header */
