@@ -1,3 +1,7 @@
+/*
+We can see that only the first 10 prints have been done, the rest have been suppressed. 
+*/
+
 #include <linux/kernel.h>
 #include <linux/module.h> 
 #include <linux/delay.h>
