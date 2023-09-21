@@ -1,4 +1,4 @@
-**1. Explain the technical concept 📘**
+**1. Concept 📘**
 
 **KERN_CONT: Continuing Log Lines in the Linux Kernel**
 
