@@ -25,7 +25,7 @@ In the Linux kernel, logging is crucial for diagnosing system and software issue
 
 
 
-**2. Technical Interview Questions about this topic (and answers) 🤓**
+**2. Technical Interview Questions about this topic (and answers) **
 
 *Q: What is the purpose of the `KERN_SOH` and `KERN_SOH_ASCII` constants in kernel logging?*
 
