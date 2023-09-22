@@ -23,7 +23,7 @@ In the Linux kernel, logging is crucial for diagnosing system and software issue
 
 - **`KERN_DEFAULT`**: The standard loglevel, if none is specified.
 
----
+
 
 **2. Technical Interview Questions about this topic (and answers) 🤓**
 
