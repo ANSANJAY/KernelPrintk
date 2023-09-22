@@ -55,6 +55,7 @@ In the same way, the Linux kernel uses different "tones" (loglevels) to categori
 ---
 There are eight possible loglevel strings, defined in the header <linux/kern_levels.h> :
 
+```C
 #define KERN_SOH "\001"  /* ASCII Start Of Header */
 #define KERN_SOH_ASCII '\001'
 
@@ -68,4 +69,4 @@ There are eight possible loglevel strings, defined in the header <linux/kern_lev
 #define KERN_DEBUG KERN_SOH "7" /* debug-level messages */
 
 #define KERN_DEFAULT KERN_SOH "d" /* the default kernel loglevel */
-
+```
