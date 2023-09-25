@@ -1,7 +1,5 @@
 # Kernel Printk
 
-# Kernel Printk
-
 ### Understanding `LOG_BUF_LEN`
 
 `LOG_BUF_LEN` is a kernel configuration parameter in Linux that determines the size of the kernel’s log buffer. The kernel’s log buffer is a ring buffer where kernel log messages (printk outputs) are stored. 
