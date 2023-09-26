@@ -35,11 +35,9 @@ Think of the `pr_*` macros like shortcuts on your phone's keyboard. Imagine typi
 For instance, if your code faces a critical issue, you don't need to type out the whole phrase with `printk`; you can just use `pr_crit` to quickly express the urgency!
 
 
-
-
------
-
 There are other functions that we can use in place of printk() in order to have more efficient messages and compact and readable code:
+
+```C
 
 #define pr_emerg(fmt, ...) \
         printk(KERN_EMERG pr_fmt(fmt), ##__VA_ARGS__)
@@ -56,3 +54,5 @@ There are other functions that we can use in place of printk() in order to have 
         printk(KERN_NOTICE pr_fmt(fmt), ##__VA_ARGS__)
 #define pr_info(fmt, ...) \
         printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+        
+```
