@@ -4,7 +4,8 @@
 
 The Linux kernel avoids using floating-point operations for a combination of performance, compatibility, and simplicity reasons:
 
-1. **Performance**: Transitioning between integer and floating-point modes is costly. Context-switching involves saving and restoring several registers, and using floating-point operations would mean additional state information has to be saved and restored. This would slow down the process of switching between tasks.
+1. **Performance**: Transitioning between integer and floating-point modes is costly.
+- Context-switching involves saving and restoring several registers, and using floating-point operations would mean additional state information has to be saved and restored. This would slow down the process of switching between tasks.
  
 2. **Simplicity**: By not utilizing the Floating Point Unit (FPU) in the kernel, there's no need to manage its state within the kernel, simplifying the kernel code. 
 
@@ -30,7 +31,8 @@ The Linux kernel avoids using floating-point operations for a combination of per
 
 **3. Simple Explanation for Easy Recall 🌼**
 
-Imagine you have a special pen that writes in glittering ink. It's beautiful but takes time to clean and is not needed for most tasks. If you used it every time you wrote something, you'd spend a lot of time cleaning and refilling it. Similarly, the Linux kernel avoids the "glitter pen" (or the FPU) because it's not often needed and would slow things down. Instead, it sticks to regular pens (integer operations) that are faster and simpler to use. If a special occasion arises where the glitter pen is needed (a user-space process requiring FPU), the kernel will bring it out, use it, and then neatly put it away.
+Imagine you have a special pen that writes in glittering ink. It's beautiful but takes time to clean and is not needed for most tasks. If you used it every time you wrote something, you'd spend a lot of time cleaning and refilling it. 
+Similarly, the Linux kernel avoids the "glitter pen" (or the FPU) because it's not often needed and would slow things down. Instead, it sticks to regular pens (integer operations) that are faster and simpler to use. If a special occasion arises where the glitter pen is needed (a user-space process requiring FPU), the kernel will bring it out, use it, and then neatly put it away.
 
 
 
