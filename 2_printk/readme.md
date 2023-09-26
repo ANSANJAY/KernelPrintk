@@ -4,6 +4,8 @@ In the Linux kernel, the `printk` function is used to produce log messages. If n
 
 The file `/proc/sys/kernel/printk` provides a way to control the behavior of kernel logging. When you `cat /proc/sys/kernel/printk`, you get four numbers, which are associated with:
 
+![](./Screenshot%20from%202023-09-25%2022-07-31.png)
+
 1. `console_loglevel`: This determines the minimum level at which messages will be printed to the console. Messages with a level below this will not be displayed.
 2. `default_message_loglevel`: If a `printk` message doesn't have a specified log level, it will be given this default level.
 3. `minimum_console_loglevel`: This sets the absolute minimum level for messages to be logged to the console. Even if `console_loglevel` is set lower than this, messages won't be displayed if they're below this minimum level.
@@ -39,23 +41,3 @@ Now, the editor uses a set of rules (log levels in `/proc/sys/kernel/printk`) to
 
 The command `dmesg -n 3` is like telling the editor to only focus on the most critical news and ignore the rest for the main screen.
 
-
-----
-
-What happens if we don't specify a log level in the printk
-
-cat /proc/sys/kernel/printk
-
-
-They are associated with the following variables: – 
-console_loglevel: level under which the messages are logged on the console device 
- default_message_loglevel: priority level that is associated by default with messages for which no priority value is specified 
-minimum_console_loglevel: minimum level to allow a message to be logged on the console device 
-maximum_console_loglevel: maximum level 
-
-$echo 8 > /proc/sys/kernel/printk
-Will change the console_loglevel
-
-$sudo dmesg -n 3
-
-----
