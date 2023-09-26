@@ -41,6 +41,8 @@ Similarly, the Linux kernel avoids the "glitter pen" (or the FPU) because it's n
 No Use of Floating Point in Kernel
 ===================================
 
+%f not allowed in kernel space
+
 When a user-space process uses floating-point instructions, the kernel manages the transition from integer to floating point mode.
 
 Why is floating point mode off?
