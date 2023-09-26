@@ -34,9 +34,4 @@ Given its default settings, the function outputs at a `KERN_DEBUG` log level, ha
 
 Imagine you're baking a cake. 🍰 `print_hex_dump` is like the full recipe, asking you to specify every ingredient's exact quantity. On the other hand, `print_hex_dump_bytes` is like a quick-mix version - just add water! You don't need to set everything; it already comes with predefined amounts (default values) for a faster and simpler baking experience. It's handy when you're in a rush and just want a glimpse of your sweet binary data without the full customization. 🧁✨
 ----
-void print_hex_dump_bytes(const char *prefix_str, int prefix_type, const void *buf, size_t len)
-
-shorthand form of print_hex_dump with default params
-
-log level of KERN_DEBUG, rowsize of 16, groupsize of 1, and ASCII output included.
 

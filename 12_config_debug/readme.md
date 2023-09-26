@@ -6,6 +6,7 @@ In the Linux kernel, logging plays an indispensable role, helping developers tro
 
 Dynamic debugging is controlled by the kernel configuration option `CONFIG_DYNAMIC_DEBUG`. When activated:
 - Calls to `pr_debug()/dev_dbg()` and `print_hex_dump_debug()/print_hex_dump_bytes()` can be toggled on/off on a per-call site basis.
+- per-call site means directory basis or file basis.
 - The system ignores debug messages not using these specific calls.
 
 To use this feature, the debugfs filesystem must be mounted:
@@ -26,6 +27,8 @@ Various flags control the inclusion of data like function name, line number, mod
 
 - **Q1**: How can you activate dynamic debugging in the Linux kernel?
   - **A1**: By setting the kernel configuration option `CONFIG_DYNAMIC_DEBUG`.
+
+![](./Screenshot%20from%202023-09-26%2001-21-38.png)
 
 - **Q2**: What is the primary purpose of dynamic debugging?
   - **A2**: Dynamic debugging allows developers to dynamically enable/disable kernel debug logging for specific call sites, making debugging more manageable and less noisy.
