@@ -10,7 +10,7 @@ int rate_limit_init(void)
 {
 	int i;
 
-	for(i=0;i<20;i++) {
+	for(i=0;i<20;i++) {//print 
 		if(printk_ratelimit()) {
 			printk(KERN_INFO"Printing %d\n", i+1);
 		}
