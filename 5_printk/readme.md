@@ -32,8 +32,3 @@ Imagine you're writing a book and have added many notes in the margins for your 
 ----
 
 
-Why is pr_debug not working?
-
-pr_debug() is designed to be removed by the compiler if DEBUG is not defined, saving space.
-
-
