@@ -34,6 +34,9 @@ Here's a breakdown of the function's parameters:
 
 *A: You would set the `prefix_type` parameter to `DUMP_PREFIX_NONE` and the `ascii` parameter to `true`. Other parameters would be set based on the specific data and display preferences.*
 
+![](./Screenshot%20from%202023-09-26%2001-15-50.png)
+
+
 ---
 
 **3. Simple Explanation for Easy Recall 🌼**
