@@ -46,6 +46,4 @@ Adjusting the size of `LOG_BUF_LEN` is essential in systems that require keeping
 
 Understanding and correctly configuring `LOG_BUF_LEN` is vital for kernel developers and system administrators alike. A properly sized log buffer ensures that essential kernel messages are retained and available for analysis, aiding in efficient debugging and system optimization.
 
----
 
-Feel free to modify this README as per your specific requirements or to add more details specific to your repository or the aspect of `LOG_BUF_LEN` you are focusing on.
