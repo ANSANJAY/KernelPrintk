@@ -1,5 +1,3 @@
-**1. Explain the technical concept 📘**
-
 **Avoiding Floating Point Usage in the Kernel**
 
 The Linux kernel avoids using floating-point operations for a combination of performance, compatibility, and simplicity reasons:
@@ -12,9 +10,6 @@ The Linux kernel avoids using floating-point operations for a combination of per
 3. **Compatibility**: Some architectures don't have an FPU, so to maintain maximum portability and compatibility across all architectures, the kernel avoids FPU ops.
 
 ---
-
-**2. Technical Interview Questions about this topic (and answers) 🤔**
-
 *Q: Why doesn't the Linux kernel use floating-point operations by default?*
 
 *A: The kernel avoids using floating-point operations to speed up context switching (by not needing to save/restore FPU state), to keep kernel code simpler, and to ensure compatibility across architectures, including those without an FPU.*
@@ -29,7 +24,7 @@ The Linux kernel avoids using floating-point operations for a combination of per
 
 ---
 
-**3. Simple Explanation for Easy Recall 🌼**
+**Simple Explanation 🌼**
 
 Imagine you have a special pen that writes in glittering ink. It's beautiful but takes time to clean and is not needed for most tasks. If you used it every time you wrote something, you'd spend a lot of time cleaning and refilling it. 
 Similarly, the Linux kernel avoids the "glitter pen" (or the FPU) because it's not often needed and would slow things down. Instead, it sticks to regular pens (integer operations) that are faster and simpler to use. If a special occasion arises where the glitter pen is needed (a user-space process requiring FPU), the kernel will bring it out, use it, and then neatly put it away.
@@ -47,21 +42,26 @@ When a user-space process uses floating-point instructions, the kernel manages t
 
 Why is floating point mode off?
 
-	many programs don't use floating point or don't use it on any given time slice; and
+	- many programs don't use floating point or don't use it on any given time slice; and
 
-	saving the FPU registers and other FPU state takes time; therefore
+	- saving the FPU registers and other FPU state takes time; therefore
 
-an OS kernel may simply turn the FPU off. Presto, no state to save and restore, and therefore faster context-switching. 
+an OS kernel may simply turn the FPU off.
 
-If a program attempts an FPU op, 
-	the program will trap into the kernel, 
-	the kernel will turn the FPU on, 
-	restore any saved state that may already exist, and 
-	then return to re-execute the FPU op.
+- Presto, no state to save and restore, and therefore faster context-switching. 
 
-At context switch time, it knows to actually go through the state save logic. (And then it may turn the FPU off again.)
+If a program attempts an FPU op,
 
-The reason that the kernel doesn't particularly need FPU ops and also needs to run on architectures without an FPU at all. 
+	- the program will trap into the kernel, 
+	- the kernel will turn the FPU on, 
+	- restore any saved state that may already exist, and 
+	- then return to re-execute the FPU op.
+
+At context switch time,
+- it knows to actually go through the state save logic. 
+- (And then it may turn the FPU off again.)
+
+The reason that the kernel doesn't particularly need FPU ops and also `needs to run on architectures without an FPU at all`. 
 
  Therefore, it simply avoids the complexity and runtime required to manage its own FPU context by not doing ops for which there are always other software solutions.
 
