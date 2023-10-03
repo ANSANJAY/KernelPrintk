@@ -57,7 +57,7 @@ Imagine you're a school principal and you have a PA system to make announcements
 In the same way, the Linux kernel uses different "tones" (loglevels) to categorize messages based on their importance. So, when developers or system admins hear (or see) them, they know how urgently they need to act.
 
 ---
-There are eight possible loglevel strings, defined in the header <linux/kern_levels.h> :
+There are eight possible loglevel strings, defined in the header `<linux/kern_levels.h>` :
 
 ```C
 #define KERN_SOH "\001"  /* ASCII Start Of Header */
