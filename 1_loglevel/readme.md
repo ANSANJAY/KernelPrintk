@@ -1,7 +1,12 @@
 
 **1. Explain the technical concept 📚**
 
-In the Linux kernel, logging is crucial for diagnosing system and software issues. The kernel provides a mechanism for categorizing the importance of log messages through "loglevels". Loglevels help in filtering the type of messages that are allowed to be logged or displayed on the console. These loglevels are defined in the header file `<linux/kern_levels.h>`.
+In the Linux kernel, 
+- logging is crucial for diagnosing system and software issues.
+- The kernel provides a mechanism for categorizing the importance of log messages through "loglevels".
+- Loglevels help in filtering the type of messages that are allowed to be logged or displayed on the console.
+- These loglevels are defined in the header file `<linux/kern_levels.h>`.
+----
 
 - **`KERN_SOH`** and **`KERN_SOH_ASCII`**: These are constants for the ASCII "Start Of Header" character. They serve as a prefix for each loglevel.
 
@@ -23,9 +28,7 @@ In the Linux kernel, logging is crucial for diagnosing system and software issue
 
 - **`KERN_DEFAULT`**: The standard loglevel, if none is specified.
 
-
-
-**2. Technical Interview Questions about this topic (and answers) **
+---
 
 *Q: What is the purpose of the `KERN_SOH` and `KERN_SOH_ASCII` constants in kernel logging?*
 
@@ -41,7 +44,7 @@ In the Linux kernel, logging is crucial for diagnosing system and software issue
 
 ---
 
-**3. Simple Explanation for Easy Recall 🌟**
+**3. Simple Explanation🌟**
 
 Imagine you're a school principal and you have a PA system to make announcements. You'd want different tones or sounds to indicate different types of announcements:
 
@@ -52,6 +55,7 @@ Imagine you're a school principal and you have a PA system to make announcements
 - 🚨 For urgent matters like "All students report to the gym immediately", you'd use a siren. This is similar to `KERN_ALERT`.
 
 In the same way, the Linux kernel uses different "tones" (loglevels) to categorize messages based on their importance. So, when developers or system admins hear (or see) them, they know how urgently they need to act.
+
 ---
 There are eight possible loglevel strings, defined in the header <linux/kern_levels.h> :
 
