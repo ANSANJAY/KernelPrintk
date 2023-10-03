@@ -1,8 +1,8 @@
-**1. Concept 📘**
+# **KERN_CONT: Continuing Log Lines in the Linux Kernel**
 
-**KERN_CONT: Continuing Log Lines in the Linux Kernel**
-
-Within the Linux kernel's logging mechanism, each `printk` statement typically starts a new line in the log. However, there might be scenarios where developers want to append to the current line of the log instead of starting a new one. This is where `KERN_CONT` becomes valuable.
+Within the Linux kernel's logging mechanism, each `printk` statement typically starts a new line in the log
+- However, there might be scenarios where developers want to append to the current line of the log instead of starting a new one. 
+- This is where `KERN_CONT` becomes valuable.
 
 When you prefix your `printk` message with `KERN_CONT`, it signals the kernel's logging system that the message should continue on the current line rather than starting a new one. It's a useful feature for situations where you're printing in a loop or want to aggregate multiple log statements onto a single line for clarity.
 
@@ -19,7 +19,7 @@ This is the start. This continues the line. And it keeps going.
 
 ---
 
-**2. Technical Interview Questions about this topic (and answers) 🤔**
+# **2. Curiousity 🤔**
 
 *Q: What is the purpose of using `KERN_CONT` in kernel logging?*
 
@@ -31,16 +31,8 @@ This is the start. This continues the line. And it keeps going.
 
 ---
 
-**3. Simple Explanation for Easy Recall 🌼**
+# **3. Simple Explanation 🌼**
 
 Think of writing in a diary. Normally, every time you start writing, you begin on a new line. But what if you wanted to keep writing on the same line, extending your previous thought? In the Linux kernel world, `KERN_CONT` is like telling your pen, "Hey, don't go to the next line. Just continue right here." So, instead of each thought (or `printk` message) getting its own line, they all string together in one smooth line. 📝🔗
 
 ----
-
-How to print a message in one single line in Linux kernel
-=============================================================
-To prevent a new line from being started, use KERN_CONT:
-
-
-----
-
