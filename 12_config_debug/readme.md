@@ -1,15 +1,18 @@
-**1. Explaining the Technical Concept 📘**
 
-**Dynamic Debugging in Linux Kernel**
+# **Dynamic Debugging in Linux Kernel**
+ However, a naive approach using `pr_debug()` can be overwhelming due to the sheer volume of logs. 
 
-In the Linux kernel, logging plays an indispensable role, helping developers troubleshoot and understand the internal workings. However, a naive approach using `pr_debug()` can be overwhelming due to the sheer volume of logs. Enter **Dynamic Debugging**.
+ -Enter **Dynamic Debugging**.
 
-Dynamic debugging is controlled by the kernel configuration option `CONFIG_DYNAMIC_DEBUG`. When activated:
+Dynamic debugging is controlled by the kernel configuration option `CONFIG_DYNAMIC_DEBUG`. 
+
+- When activated:
 - Calls to `pr_debug()/dev_dbg()` and `print_hex_dump_debug()/print_hex_dump_bytes()` can be toggled on/off on a per-call site basis.
 - per-call site means directory basis or file basis.
 - The system ignores debug messages not using these specific calls.
 
 To use this feature, the debugfs filesystem must be mounted:
+
 ```bash
 $ mount -t debugfs none /sys/kernel/debug
 ```
@@ -17,13 +20,14 @@ $ mount -t debugfs none /sys/kernel/debug
 Control over which debug statements are active is managed by a control file in the `debugfs` filesystem, commonly referenced as `<debugfs>/dynamic_debug/control`.
 
 **Syntax** for controlling which logs get printed:
+
 ```bash
 echo “<matches> <ops><flags>” > <debugfs>/dynamic_debug/control
 ```
 
 Various flags control the inclusion of data like function name, line number, module name, etc.
 
-**2. Interview Questions and Answers 💼**
+# **2.  Questions and Answers 💼**
 
 - **Q1**: How can you activate dynamic debugging in the Linux kernel?
   - **A1**: By setting the kernel configuration option `CONFIG_DYNAMIC_DEBUG`.
@@ -45,7 +49,7 @@ Various flags control the inclusion of data like function name, line number, mod
   ```
   - **A5**: It would enable all debug messages in the NFS server module.
 
-**3. Simple Explanation for Quick Recollection 🌟**
+# **3. Simple Explanation 🌟**
 
 Imagine you're in a room full of talkative people, and it's super noisy. It's tough to focus on just one person's speech. This is how the kernel feels when all debug logs are on. 
 
